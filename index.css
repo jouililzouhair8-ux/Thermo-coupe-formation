@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    font-family: 'Cairo', 'Inter', system-ui, sans-serif;
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    overscroll-behavior-y: none;
+  }
+  * {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ink-900 text-white font-semibold rounded-xl px-6 py-3.5 transition-all duration-200 active:scale-[0.98] hover:bg-ink-800;
+  }
+  .btn-secondary {
+    @apply bg-ink-100 text-ink-900 font-semibold rounded-xl px-6 py-3.5 transition-all duration-200 active:scale-[0.98] hover:bg-ink-200;
+  }
+  .btn-ghost {
+    @apply text-ink-900 font-medium rounded-xl px-4 py-2.5 transition-all duration-200 active:scale-[0.98] hover:bg-ink-100;
+  }
+  .card {
+    @apply bg-ink-100 rounded-2xl p-4 transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full bg-white border border-ink-200 rounded-xl px-4 py-3 text-ink-900 placeholder-ink-400 focus:outline-none focus:border-ink-900 transition-colors duration-200;
+  }
+  .label-text {
+    @apply block text-sm font-semibold text-ink-700 mb-1.5;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 4px;
+}
+
+/* Hide scrollbar for carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide Bolt watermark badge / platform branding */
+[id^="bolt-"],
+.bolt-badge,
+.bolt-watermark,
+.bolt-banner,
+[class*="bolt-badge"],
+[class*="bolt-watermark"],
+[class*="bolt-banner"],
+a[href*="bolt.new"],
+div:has(> a[href*="bolt.new"]),
+div:has(> [class*="bolt-badge"]),
+div:has(> [class*="bolt-watermark"]),
+div:has(> [class*="bolt-banner"]) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Root occupies full viewport, no room for external overlays */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Force LTR on auth inputs so passwords/emails are not reversed by RTL context */
+input[type="email"],
+input[type="password"],
+input[data-auth-input] {
+  direction: ltr !important;
+  text-align: left !important;
+}

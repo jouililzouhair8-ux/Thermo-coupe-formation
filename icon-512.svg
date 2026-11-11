@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="108" fill="#1A1A1A"/>
+  <g transform="translate(256, 240)">
+    <path d="M0 -130 C 32 -130 52 -100 52 -62 C 52 -36 36 -20 20 -10 L 20 52 L -20 52 L -20 -10 C -36 -20 -52 -36 -52 -62 C -52 -100 -32 -130 0 -130 Z" fill="#FFFFFF"/>
+    <ellipse cx="0" cy="-62" rx="26" ry="36" fill="#F4F4F5"/>
+    <path d="M-16 10 L16 10 L10 48 L-10 48 Z" fill="#E4E4E7"/>
+  </g>
+  <text x="256" y="460" font-family="Cairo, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" text-anchor="middle">thermo-coupe</text>
+</svg>
